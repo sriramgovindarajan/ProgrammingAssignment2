@@ -32,11 +32,11 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
     inverse_matrix<- x$getinverse()
     if(!is.null(inverse_matrix)) {
-        message("No need to compute; getting cached inverse matrix")
+        message("No need to compute; returning cached inverse matrix")
         return(inverse_matrix)
     }
     data <- x$get()
     inverse_matrix <- solve(data, ...) 
-    x$setinverse(inverse_matrix)
+    x$setinverse(inverse_matrix)   ##Solving for the first and only time
     inverse_matrix
 }
